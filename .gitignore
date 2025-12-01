@@ -1,0 +1,8 @@
+### IntelliJ IDEA ###
+out/
+.idea/
+CodingFactoryTestbed.iml
+**/*.log
+
+### Mac OS ###
+.DS_Store
