@@ -19,15 +19,32 @@ public class FiveProjects04 {
 
         while (!gameEnded && isEmpty(arr)) {
             if (count % 2 == 0) {
+
                 System.out.println("Player one, please choose your position(number of row and column):");
+
+                // Validate row input
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Invalid input. Please enter numbers only.");
+                    scanner.next();
+                    continue;
+                }
                 playerOneRow = scanner.nextInt();
+
+                // Validate column input
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Invalid input. Please enter numbers only.");
+                    scanner.next();
+                    continue;
+                }
                 playerOneColumn = scanner.nextInt();
-                if ( playerOneRow < 1 || playerOneRow > 3 || playerOneColumn < 1 || playerOneColumn > 3) {
+
+                if (playerOneRow < 1 || playerOneRow > 3 || playerOneColumn < 1 || playerOneColumn > 3) {
                     System.out.println("Player must enter values between 1 and 3");
                     continue;
                 }
+
                 if (arr[playerOneRow - 1][playerOneColumn - 1] == 0) {
-                    arr[playerOneRow -1][playerOneColumn -1] = 1;
+                    arr[playerOneRow - 1][playerOneColumn - 1] = 1;
                     printArr(arr);
                     count++;
                     gameEnded = (checkHorizontal(arr, PLAYERONESIG) || checkVertical(arr, PLAYERONESIG) || checkDiagonal(arr, PLAYERONESIG));
@@ -39,15 +56,33 @@ public class FiveProjects04 {
                     System.out.println("This position is taken, try another!");
                     continue;
                 }
+
             } else {
+
                 System.out.println("Player two, please choose your position(number of row and column):");
+
+                // Validate row
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Invalid input. Please enter numbers only.");
+                    scanner.next();
+                    continue;
+                }
                 playerTwoRow = scanner.nextInt();
+
+                // Validate column
+                if (!scanner.hasNextInt()) {
+                    System.out.println("Invalid input. Please enter numbers only.");
+                    scanner.next();
+                    continue;
+                }
                 playerTwoColumn = scanner.nextInt();
-                if ( playerTwoRow < 1 || playerTwoRow > 3 || playerTwoColumn < 1 || playerTwoColumn > 3) {
+
+                if (playerTwoRow < 1 || playerTwoRow > 3 || playerTwoColumn < 1 || playerTwoColumn > 3) {
                     System.out.println("Player must enter values between 1 and 3");
                     continue;
                 }
-                if (arr[playerTwoRow -1][playerTwoColumn - 1] == 0) {
+
+                if (arr[playerTwoRow - 1][playerTwoColumn - 1] == 0) {
                     arr[playerTwoRow - 1][playerTwoColumn - 1] = 2;
                     printArr(arr);
                     count++;
