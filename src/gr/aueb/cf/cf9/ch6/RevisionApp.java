@@ -8,6 +8,9 @@ public class RevisionApp {
                 {1015, 1020}
         };
 
+        int count = 0;
+        int maxCount = 0;
+
         int[][] newArr = new int[arr.length * 2][2];
         int index = 0;
 
@@ -21,15 +24,10 @@ public class RevisionApp {
             index++;
         }
 
-        selectionSort(newArr);
-
-        int count = 0;
-        int maxCount = 0;
-
         for (int i = 0; i < newArr.length; i++) {
             if (newArr[i][1] == 1) {
                 count++;
-                if (count > maxCount) {
+                if (maxCount < count) {
                     maxCount = count;
                 }
             } else {
@@ -37,22 +35,21 @@ public class RevisionApp {
             }
         }
 
-        System.out.println("Μέγιστος αριθμός αυτοκινήτων σταθμευμένων ταυτόχρονα: " + maxCount);
+        System.out.println("Maximum number of parked cars at the same time: " + maxCount);
     }
 
     public static void selectionSort(int[][] arr) {
-        int minPosition;
 
-        for (int i = 0; i < arr.length -1; i++) {
-            minPosition = i;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minPosition = i;
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j][0] < arr[minPosition][0]) {
                     minPosition = j;
                 }
             }
-            int[] temp = arr[i];
+            int[] tmp = arr[i];
             arr[i] = arr[minPosition];
-            arr[minPosition] = temp;
+            arr[minPosition] = tmp;
         }
     }
 }

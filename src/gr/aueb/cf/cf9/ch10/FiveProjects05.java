@@ -39,7 +39,14 @@ public class FiveProjects05 {
 
                     row = scanner.nextInt() - 1;
 
-                    col = scanner.next().charAt(0);
+                    // Column validation
+                    String colInput = scanner.next().toLowerCase();
+                    if (colInput.length() != 1) {
+                        System.out.println("Invalid column — must be a single letter (a-l).");
+                        return;
+                    }
+
+                    col = colInput.charAt(0);
 
                     if (row < 0 || row >= 30) {
                         System.out.println("Invalid row — must be between 1 and 30.");
@@ -64,7 +71,14 @@ public class FiveProjects05 {
 
                     row = scanner.nextInt() - 1;
 
-                    col = scanner.next().charAt(0);
+                    // Column validation
+                    String colInput2 = scanner.next().toLowerCase();
+                    if (colInput2.length() != 1) {
+                        System.out.println("Invalid column — must be a single letter (a-l).");
+                        return;
+                    }
+
+                    col = colInput2.charAt(0);
 
                     if (row < 0 || row >= 30) {
                         System.out.println("Invalid row — must be between 1 and 30.");
@@ -91,7 +105,7 @@ public class FiveProjects05 {
 
     public static void book(char column, int row) {
 
-        //without this we get outofboundsexception because cahars turn into ascii(big numbers
+        //without this we get outofboundsexception because chars turn into ascii(big numbers
         // c - a => 99 - 97...
         int colIndex = column - 'a';
 
