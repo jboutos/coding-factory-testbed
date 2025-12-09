@@ -9,6 +9,4 @@ public class Main {
         System.out.println("Firstname: " + john.getFirstname());
         System.out.println("Lastname: " + john.getLastname());
     }
-
-
 }

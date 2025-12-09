@@ -17,7 +17,7 @@ public class FiveProjects04 {
 
         boolean gameEnded = false;
 
-        while (!gameEnded && isEmpty(arr)) {
+        while (!gameEnded) {
             if (count % 2 == 0) {
 
                 System.out.println("Player one, please choose your position(number of row and column):");
@@ -50,6 +50,9 @@ public class FiveProjects04 {
                     gameEnded = (checkHorizontal(arr, PLAYERONESIG) || checkVertical(arr, PLAYERONESIG) || checkDiagonal(arr, PLAYERONESIG));
                     if (gameEnded) {
                         System.out.println("Player one has won!");
+                        break;
+                    }
+                    if (!isEmpty(arr)) {
                         break;
                     }
                 } else {
@@ -89,6 +92,9 @@ public class FiveProjects04 {
                     gameEnded = (checkHorizontal(arr, PLAYERTWOSIG) || checkVertical(arr, PLAYERTWOSIG) || checkDiagonal(arr, PLAYERTWOSIG));
                     if (gameEnded) {
                         System.out.println("Player two has won!");
+                        break;
+                    }
+                    if (!isEmpty(arr)) {
                         break;
                     }
                 } else {
